@@ -68,8 +68,13 @@ class ViewEngine extends Controller
 		            ->get()->first();
          if($result->p_id !==""){
 	          $ques = DB::table('user_question')
-	          			->where('userques_id',$result->p_id)
+	          			->join('questions', 'user_question.question_id', '=', 'questions.quesid')
+                        ->join('categories', 'categories.cat_id', '=', 'questions.category_id')
+                        ->join('sub_categories', 'sub_categories.id', '=', 'questions.subcategory_id')
+	          			->where('user_question.user_id',$result->p_id)
 	            		->get();
+
+	            // dd($ques);
 	        }else{
 	        	$ques="";
 	        }

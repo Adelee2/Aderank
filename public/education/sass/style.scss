@@ -259,8 +259,8 @@ h1, h2, h3, h4, h5, h6, figure {
 			display: inline;
 			font-weight: 300;
 			a {
-				font-size: 14px;
-				padding: 30px 15px;
+				font-size: 15px;
+				padding: 15px 15px;
 				color: rgba(0,0,0,.9);
 				@include transition(.5s);
 				&:hover,&:focus, &:active {

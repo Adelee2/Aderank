@@ -1,3 +1,4 @@
+
 <div class="navbar navbar-fixed-top" style="background: #343a40;">
             <div class="navbar-inner">
                 <div class="container">
@@ -26,7 +27,7 @@
                                     <li><a href="#">A Separated link</a></li>
                                 </ul>
                             </li> -->
-                            <li><a href="/topics/createquestions" class="btn btn-primary" style="color: #fff; height: 1vh;">create Question </a></li>
+                            <li><span><a href="/topics/createquestions" class="btn btn-primary" style="color: #fff;">create Question </a></span></li>
                             <li class="nav-user dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">
                                 <img src="{{ url('code/images/user.png') }}" class="nav-avatar" />
                                 <b class="caret"></b></a>

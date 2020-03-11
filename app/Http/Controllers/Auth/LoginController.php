@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Session;
 use Stevebauman\Location\LocationServiceProvider;
 use Illuminate\Support\Facades\Hash;
+use App\Http\Controllers\Auth;
 // use Illuminate\Auth\Middleware\EnsureEmailIsVerified;
 // use App\User;
 
@@ -33,7 +34,7 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = RouteServiceProvider::HOME;
+    // protected $redirectTo = RouteServiceProvider::HOME;
 
     public function loginpage()
     {
@@ -41,10 +42,17 @@ class LoginController extends Controller
         return view('loginpage');
         // return redirect()->with('userprofile')
     }
+    public function redirectto($token){
+        // dd($token);
+        if($token==false){
+            return redirect('');
+        }
+    }
     public function logoutpage(Request $request)
     {
+
         $request->session()->forget('key');
-        return view('home');
+        return redirect('');
         // return redirect()->with('userprofile')
     }
     public function registerpage()
@@ -83,7 +91,7 @@ class LoginController extends Controller
     public function verifydatabase($email,$hash)
     {
         if($email !== "" && $hash !== ""){
-            $response = DB::table('personal_data')->where('token',$hash)->get();
+            $response = DB::table('personal_data')->where('token',$hash)->where('email',$email)->get();
             // dd($response);
             if(count($response)>0){
                 DB::table('personal_data')->where('email', $email)->update(['email_verified_at' => true]);

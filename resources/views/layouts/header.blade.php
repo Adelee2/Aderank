@@ -19,7 +19,7 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-xs-2">
-						<div id="fh5co-logo"><a href="index.html"><i class="icon-study"></i>Educ<span>.</span></a></div>
+						<div id="fh5co-logo"><a href="index.html"><i class="icon-study"></i>Aderank<span>.</span></a></div>
 					</div>
 					<div class="col-xs-10 text-right menu-1">
 
@@ -47,10 +47,12 @@
 
 							@if(\Session::has('key'))
 
-								<li class="has-dropdown"><i class="fa fa-user" aria-hidden="true"></i><a href="#"><b>{{\Session::get('key')->firstname}} {{\Session::get('key')->lastname}}</b></a>
-									<ul style="background: #2d6cdf; box-shadow:#2d6cdf;  color: #fff;"class="dropdown">
-										<li ><a style="color: #fff;" href="/dashboard/{{\Session::get('key')->token}}">My Dashboard</a></li>
-										<li ><a style="color: #fff;" href="/logout">logout</a></li>
+								<li class="nav-user dropdown">
+									<a href="#" class="dropdown-toggle" data-toggle="dropdown"><b class="caret"></b><strong>{{\Session::get('key')->firstname}} {{\Session::get('key')->lastname}}</strong></a>
+                                	<ul class="dropdown-menu">
+
+										<li ><a style="" href="/dashboard/{{\Session::get('key')->token}}">My Dashboard</a></li>
+										<li ><a style="" href="/logout">logout</a></li>
 									</ul>
 								</li>
 							@endif

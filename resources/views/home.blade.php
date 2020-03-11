@@ -24,7 +24,7 @@
 		   			<div class="row">
 			   			<div class="col-md-8 col-md-offset-2 text-center slider-text">
 			   				<div class="slider-text-inner">
-			   					<h1>Ade's Coding Platform</h1>
+			   					<h1>Aderank Coding Platform</h1>
 			   					<h2>Test yourself in algorithms </h2>
 									<p><a class="btn btn-primary btn-lg btn-learn" href="/topics">Solve some algorithms</a></p>
 			   				</div>
@@ -64,7 +64,7 @@
 							<i class="icon-shop"></i>
 						</span>
 						<div class="desc">
-							<h3><a href="#">Business</a></h3>
+							<h3><a href="#">Arrays</a></h3>
 							<p>Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem provident. Odit ab aliquam dolor eius.</p>
 						</div>
 					</div>
@@ -75,7 +75,7 @@
 							<i class="icon-heart4"></i>
 						</span>
 						<div class="desc">
-							<h3><a href="#">Health &amp; Psychology</a></h3>
+							<h3><a href="#">Linked List</a></h3>
 							<p>Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem provident. Odit ab aliquam dolor eius.</p>
 						</div>
 					</div>
@@ -86,7 +86,7 @@
 							<i class="icon-banknote"></i>
 						</span>
 						<div class="desc">
-							<h3><a href="#">Accounting</a></h3>
+							<h3><a href="#">Greedy Algorithm</a></h3>
 							<p>Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem provident. Odit ab aliquam dolor eius.</p>
 						</div>
 					</div>
@@ -200,7 +200,7 @@
 							<div class="item">
 								<div class="testimony-slide active text-center">
 									<div class="user" style="background-image: url('{{asset('education/images/person1.jpg') }}');"></div>
-									<span>Mary Walker<br><small>Students</small></span>
+									<span>Oluwatunji Ogbade<br><small>Students</small></span>
 									<blockquote>
 										<p>&ldquo;Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.&rdquo;</p>
 									</blockquote>
@@ -209,7 +209,7 @@
 							<div class="item">
 								<div class="testimony-slide active text-center">
 									<div class="user" style="background-image: url('{{asset('education/images/person2.jpg') }}');"></div>
-									<span>Mike Smith<br><small>Students</small></span>
+									<span> Onkugu Robert <br><small>Students</small></span>
 									<blockquote>
 										<p>&ldquo;Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.&rdquo;</p>
 									</blockquote>
@@ -218,7 +218,7 @@
 							<div class="item">
 								<div class="testimony-slide active text-center">
 									<div class="user" style="background-image: url('{{asset('education/images/person3.jpg') }}');"></div>
-									<span>Rita Jones<br><small>Teacher</small></span>
+									<span>Joy Folake<br><small>Teacher</small></span>
 									<blockquote>
 										<p>&ldquo;Far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.&rdquo;</p>
 									</blockquote>
