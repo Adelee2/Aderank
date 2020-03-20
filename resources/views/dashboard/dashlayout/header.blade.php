@@ -10,12 +10,7 @@
                             <li><a href="#"><i class="icon-eye-open"></i></a></li>
                             <li><a href="#"><i class="icon-bar-chart"></i></a></li> -->
                         </ul>
-                        <form class="navbar-search pull-left input-append" action="#">
-                        <input type="text" class="span3">
-                        <button class="btn" type="button">
-                            <i class="icon-search"></i>
-                        </button>
-                        </form>
+                        
                         <ul class="nav pull-right">
                             <!-- <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown
                                 <b class="caret"></b></a>
@@ -27,7 +22,7 @@
                                     <li><a href="#">A Separated link</a></li>
                                 </ul>
                             </li> -->
-                            <li><span><a href="/topics/createquestions" class="btn btn-primary" style="color: #fff;">create Question </a></span></li>
+                            <!-- <li><span><a href="/topics/createquestions" class="btn btn-primary" style="color: #fff;">create Question </a></span></li> -->
                             <li class="nav-user dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">
                                 <img src="{{ url('code/images/user.png') }}" class="nav-avatar" />
                                 <b class="caret"></b></a>

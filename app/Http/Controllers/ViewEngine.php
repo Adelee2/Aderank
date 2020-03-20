@@ -25,10 +25,15 @@ class ViewEngine extends Controller
    		$result = DB::table('categories')
             ->where('cat_id',$id)
             ->get()->first();
-            if($result->is_subcat){
-            	return $this->loadsubcat($id);
+            // dd($result);
+            if($result ==null){
+                return $this->viewsubcat($id);
+            	
+            }
+            elseif($result->is_subcat==0){
+                return $this->viewsubcat($id);
             }else{
-            	return $this->viewsubcat($id);
+            	return $this->loadsubcat($id);
             }
    	}
     public function loadsubcat($id){
@@ -40,26 +45,61 @@ class ViewEngine extends Controller
     	return view('loadsubcatpage',compact('result'));
     }
     public function viewsubcat($id){
-    	$result = DB::table('questions')
-		            ->join('sub_categories', 'sub_categories.id', '=', 'questions.subcategory_id')
-		            ->where('questions.subcategory_id',$id)
-		            ->get();
+        $result=[];
+        $has_subcat = DB::table('sub_categories')
+                        ->join('categories', 'categories.cat_id', '=', 'sub_categories.category_id')
+                        ->where('id',$id)
+                        ->where('categories.is_subcat',1)
+                        ->get()->first();
+            // dd($has_subcat);
+            
+        if($has_subcat ==null ){
+            $result = DB::table('questions')
+                        ->where('questions.quesid',$id)
+                        ->get();
+                $is_subcat=false;
+        }
+        else{
+        	$result = DB::table('questions')
+    		            ->join('sub_categories', 'sub_categories.id', '=', 'questions.subcategory_id')
+    		            ->where('questions.subcategory_id',$id)
+    		            ->get();
+                    // dd($result);
+            $is_subcat=true;
+            
+        }
         $topics = Category::all();
         $subcat = DB::table('sub_categories')
 		            ->join('categories', 'sub_categories.category_id','=','categories.cat_id')
 		            ->get();
 
          // dd($subcat);
-    	return view('viewsubcatpage',compact('result','topics','subcat'));
+    	return view('viewsubcatpage',compact('result','topics','subcat','is_subcat'));
     }
 
     public function quespage($id){
-    	$result = DB::table('questions')
+        $has_subcat = DB::table('categories')
+            ->where('cat_id',$id)
+            ->get()->first();
+            // dd($has_subcat);
+        if($has_subcat->is_subcat!==0){
+    	   $result = DB::table('questions')
 	            ->join('sub_categories', 'sub_categories.id', '=', 'questions.subcategory_id')
 	            ->where('questions.quesid',$id)
 	            ->get();
+        }
+         else{
+            $result = DB::table('questions')
+                    ->where('questions.quesid',$id)
+                    ->get();
+            $is_subcat=false;
+        }
+        $topics = Category::all();
+        $subcat = DB::table('sub_categories')
+                    ->join('categories', 'sub_categories.category_id','=','categories.cat_id')
+                    ->get();
          // dd($result);
-    	return view('quespage',compact('result'));
+    	return view('quespage',compact('result','topics','subcat'));
     }
     public function mydashboard($token){
     	// $token = $token;
@@ -73,7 +113,13 @@ class ViewEngine extends Controller
                         ->join('sub_categories', 'sub_categories.id', '=', 'questions.subcategory_id')
 	          			->where('user_question.user_id',$result->p_id)
 	            		->get();
-
+                // $arrtotal=[
+                //     'datastructure'=>[
+                //                         'yours'=>5
+                //                         'total'=>10
+                //                         ],
+                //     'algorithm'=>[2,6];
+                // ]
 	            // dd($ques);
 	        }else{
 	        	$ques="";
@@ -85,5 +131,11 @@ class ViewEngine extends Controller
     public function errorpage($error)
     {
     	return view('errorpage',compact('error'));
+    }
+
+    public function createpage(){
+        $topics = Category::all();
+
+        return view('dashboard.createquestion',compact('topics'));
     }
 }

@@ -39,7 +39,7 @@
 							<span class="posted_on">March. 15th</span>
 							<span class="comment"><a href="">21<i class="icon-speech-bubble"></i></a></span>
 							<p><small>{{$data->subcat_description}}</small></p>
-							<span><a onclick="gotolink({{$data->id}})" class="btn btn-primary btn-sm btn-course">Solve Questions</a></span>
+							<span><a onclick="gotolink({{$data->id}})" class="btn btn-success btn-sm btn-course">Solve Questions</a></span>
 						</div> 
 					</div>
 				</div>
@@ -85,8 +85,8 @@
 		
 	// })
 		function gotolink(id){
-			// console.log(id);
-			window.location.href='/topics/viewsubcatpage/'+id;
+			console.log(id);
+			window.location.href='/topics/cat-subcat/'+id;
 		}
 </script>
 @endsection

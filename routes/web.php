@@ -15,6 +15,7 @@ Route::get('/', 'ViewEngine@home');
 Route::get('/topics', 'ViewEngine@topics');
 Route::get('/topics/cat-subcat/{id}', 'ViewEngine@has_subcat');
 Route::get('/topics/createquestions', 'ViewEngine@createpage');
+Route::post('/topics/createquestions', 'Utilities@insertquestion');
 
 Route::get('/login', 'Auth\LoginController@loginpage');
 Route::get('/logout', 'Auth\LoginController@logoutpage');
@@ -28,5 +29,8 @@ Route::get('/topics/loadsubcatpage/{id}','ViewEngine@loadsubcat');
 Route::get('/topics/viewsubcatpage/{id}','ViewEngine@viewsubcat');
 Route::get('/topics/loadquestion/{id}','ViewEngine@quespage');
 Route::get('/dashboard/{token}', 'ViewEngine@mydashboard');
+
+Route::get('/api/getsubcat/{cat_id}', 'Utilities@getsubcat');
+Route::get('/api/getquestion/{id}', 'Utilities@getquestion');
 
 Route::get('/404page/{error}','ViewEngine@errorpage');

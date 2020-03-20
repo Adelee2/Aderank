@@ -59,7 +59,12 @@
 
 	<!-- Theme style  -->
 	<link rel="stylesheet" href="{{ url('education/css/style.css') }}">
-	<link rel="stylesheet" type="text/css" href="http://cdnjs.cloudflare.com/ajax/libs/ace/1.4.7/ace.js">
+		<!-- jQuery -->
+	<script src="{{ url('education/js/jquery.min.js') }}"></script>
+	<!-- jQuery Easing -->
+	<script src="{{ url('education/js/jquery.easing.1.3.js') }}"></script>
+	<!-- Bootstrap -->
+	<script src="{{ url('education/js/bootstrap.min.js') }}"></script>
 
 	<!-- Modernizr JS -->
 	<script src="{{ url('education/js/modernizr-2.6.2.min.js') }}"></script>
@@ -88,12 +93,7 @@
 		<a href="#" class="js-gotop"><i class="icon-arrow-up"></i></a>
 	</div>
 	
-	<!-- jQuery -->
-	<script src="{{ url('education/js/jquery.min.js') }}"></script>
-	<!-- jQuery Easing -->
-	<script src="{{ url('education/js/jquery.easing.1.3.js') }}"></script>
-	<!-- Bootstrap -->
-	<script src="{{ url('education/js/bootstrap.min.js') }}"></script>
+
 	<!-- Waypoints -->
 	<script src="{{ url('education/js/jquery.waypoints.min.js') }}"></script>
 	<!-- Stellar Parallax -->

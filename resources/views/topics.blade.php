@@ -37,7 +37,7 @@
 						<div class="desc">
 							<h3><a href="#">{{$data->category_name}}</a></h3>
 							<p>{{$data->cat_description}}</p>
-							<span><a onclick="gotolink({{$data->cat_id}})" class="btn btn-primary btn-sm btn-course">Select Category</a></span>
+							<span><a onclick="gotolink({{$data->cat_id}})" class="btn btn-success btn-sm btn-course">Select Category</a></span>
 						</div>
 					</div>
 				</div>

@@ -74,7 +74,7 @@ class LoginController extends Controller
             if(Hash::check($pass,$response->password)){
                 // $userprofile = Json
                 $req->session()->put('key',$response);
-                return redirect('');
+                return redirect('')->with('success','login successful!');
             }
             else{
                 return back()->with('error','Password is incorrect');
