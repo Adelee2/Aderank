@@ -11,30 +11,37 @@
 			<div id="" style="margin-top: -100px;">
 				<div class="col-md-8 animate-box ">
 					<!-- <div style="height: 155vh; width: 100%; background: #fff;" class="overlay"></div> -->
-					<form action="#">
+					<form action="/uploadquestion" method="post">
+						{{csrf_field()}}
 						<div class="row form-group animate-box" style="">
-							<textarea disabled="disabled" style="box-shadow: 5px 10px #888888; width: 90%; height: 80vh; font-size: 14px;padding: 20px; " value="">{{$result[0]->questions}}
+							<textarea disabled="disabled" style="box-shadow: 5px 10px 10px #888888; width: 95%; height: 90vh; font-size: 14px;padding: 20px; " value="">{{$result[0]->questions}}
 								</textarea>
 							
 						</div>
 						<!-- <p>RUN YOUT CODE HERE!!</p> -->
 						<div class="row form-group  animate-box">
 								<label for="subject">select language</label>
-								<select class="col-md-2" onchange="getlang(this.value)">
+								<select class="col-md-2" onchange="getlang(this.value)" name="lang">
 									<option value="">select an editor</option>
 									<option value="1">C++14</option>
-									<option value="2">php</option>
+									<option value="2">python</option>
 									<option value="3">JavaScript</option>
 								</select>
-								<div id="editor" style="box-shadow: 5px 10px #888888; width: 90%; height: 50vh;">
+								<div id="editor" style="box-shadow: 5px 10px 10px #888888; width: 95%; height: 50vh;">
 								</div>
-								<input type="hidden" id="code" name="">
-							<!-- </div> -->
+								<input type="hidden" id="code" name="codesoln">
 						</div>
 						<div class="form-group  animate-box">
-							<input type="button" onclick="onsubmiting()" value="Run" class="btn btn-success">
-						</div>
+                            <input style="float:right; margin-right: 50px;" type="submit" onclick="onsubmiting()" value="Run" class="btn btn-success">
+                            <textarea style="box-shadow:5px 10px 10px #888888; width: 30%; height: 15vh; font-size: 14px;padding: 10px;" placeholder="INPUT" name="testcases"></textarea>
 
+						</div>
+                        @if(\Session::has('results'))
+                            <div class="form-group animate-box alert alert-light" style="color:#000000; ">
+                                <h4>your output:</h4>
+                                {{{ \Session::get('results') }}}
+                            </div>
+                         @endif
 					</form>		
 				</div>
 				<div class="col-md-4 col-lg-4">
@@ -79,9 +86,11 @@
 			</div>
 		</div>
 	</section>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.5/ace.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.9/ace.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.5/mode-c_cpp.js"></script>
-	<script type="text/javascript">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.5/mode-python.js"></script>
+
+    <script type="text/javascript">
 		function gotolink(id){
 			console.log(id);
 			window.location.href='/topics/loadquestion/'+id;
@@ -116,8 +125,7 @@
 		        vScrollBarAlwaysVisible:true,
 		        enableBasicAutocompletion: false, enableLiveAutocompletion: false
 		      });
-		      editor.setValue(`
-		      	`);
+//		      editor.setValue(``);
 		      editor.setShowPrintMargin(false);
 		      editor.setBehavioursEnabled(false);
 	 	}
@@ -135,7 +143,7 @@
 		        enableBasicAutocompletion: false, enableLiveAutocompletion: false
 		      });
 		      editor.setValue(`
-  	#include <bits/stdc++.h>
+  	#include <iostream>
 
   	using namespace std;
 
@@ -149,7 +157,7 @@
 
 	 	}
 	 	else if(value=='2'){
-		      editor.getSession().setMode("ace/mode/php");
+		      editor.getSession().setMode("ace/mode/python");
 
 		      editor.focus();
 		      
@@ -162,10 +170,15 @@
 		        enableBasicAutocompletion: false, enableLiveAutocompletion: false
 		      });
 		      editor.setValue(`
-	$x = 1;
-	$y = 2;	      	
-  	echo($x + $y)."</br>";	
-		      	`);
+    import numpy as nm
+
+    addnumber(a,b)
+        return a+b
+
+	x= 10
+	y= 5
+
+	print(addnumber(x,y))`);
 		      editor.setShowPrintMargin(false);
 		      editor.setBehavioursEnabled(false);
 	 	}

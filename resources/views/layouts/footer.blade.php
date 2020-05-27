@@ -11,11 +11,10 @@
 					<ul class="fh5co-footer-links">
 						<li><a href="#">Data Structures</a></li>
 						<li><a href="#">Algorithms</a></li>
-						<li><a href="#">Implentation</a></li>
+						<li><a href="#">Implementation</a></li>
 						<!-- <li><a href="#">Meetups</a></li> -->
 					</ul>
 				</div>
-
 				<div class="col-md-2 col-sm-4 col-xs-6 col-md-push-1 fh5co-widget">
 					<h3>Sub-Topics</h3>
 					<ul class="fh5co-footer-links">

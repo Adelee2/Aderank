@@ -75,10 +75,10 @@
 	function getshadow(val){
 		// console.log(val);
 		var elem  = document.getElementById(val);
-			elem.style.boxShadow= "5px 10px #888888";
+			elem.style.boxShadow= "5px 10px 10px #888888";
 
 		$('#'+val).mouseout(function(){
-			$('#'+val).css("box-shadow","0px 0px");
+			$('#'+val).css("box-shadow","0px 0px 0px");
 		});
 	}
 	// $(document).ready(function(){

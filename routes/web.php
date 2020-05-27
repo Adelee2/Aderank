@@ -33,4 +33,5 @@ Route::get('/dashboard/{token}', 'ViewEngine@mydashboard');
 Route::get('/api/getsubcat/{cat_id}', 'Utilities@getsubcat');
 Route::get('/api/getquestion/{id}', 'Utilities@getquestion');
 
+Route::post('/uploadquestion','Utilities@uploadquestion');
 Route::get('/404page/{error}','ViewEngine@errorpage');

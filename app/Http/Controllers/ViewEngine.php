@@ -78,6 +78,7 @@ class ViewEngine extends Controller
     }
 
     public function quespage($id){
+        $results="";
         $has_subcat = DB::table('categories')
             ->where('cat_id',$id)
             ->get()->first();
@@ -99,7 +100,7 @@ class ViewEngine extends Controller
                     ->join('categories', 'sub_categories.category_id','=','categories.cat_id')
                     ->get();
          // dd($result);
-    	return view('quespage',compact('result','topics','subcat'));
+    	return view('quespage',compact('result','results','topics','subcat'));
     }
     public function mydashboard($token){
     	// $token = $token;

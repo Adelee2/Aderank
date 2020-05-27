@@ -19,7 +19,7 @@
 						<div class="col-md-8 col-lg-8">
 							<div class="col-md-12">
 									@foreach($result as $data)
-									<div class="fh5co-event animate-box shadows" id="{{$data->quesid}}" onmouseover="getshadow({{$data->quesid}})" style="box-shadow: 5px 10px #888888; border: 1px solid; padding-left: 20px;">
+									<div class="fh5co-event animate-box shadows" id="{{$data->quesid}}" onmouseover="getshadow({{$data->quesid}})" style="box-shadow: 5px 10px 10px #888888; border: 1px solid; padding-left: 20px;">
 										<div class="desc">
 											<h3><a href="#"></a></h3>
 											<p>{{substr($data->questions,0,150)}}...<span style="margin-left: 20px;"><a onclick="gotolink({{$data->quesid}})" class="btn btn-success btn-sm btn-course">Solve</a></span></p>
@@ -95,14 +95,14 @@
 	<script type="text/javascript">
 		function getshadow(val){
 			// console.log(val);
-			var elem  = document.getElementById(val);
-				elem.style.boxShadow= "5px 10px #888888";
+//			var elem  = document.getElementById(val);
+//				elem.style.boxShadow= "5px 10px 10px #888888";
 
 			$('#'+val).mouseover(function(){
-				$('#'+val).css("box-shadow","0px 0px");
+				$('#'+val).css("box-shadow","0px 0px 0px");
 			});
 			$('#'+val).mouseout(function(){
-				$('#'+val).css("box-shadow","5px 10px #888888");
+				$('#'+val).css("box-shadow","5px 10px 10px #888888");
 			});
 		}
 		function gotolink(id){
