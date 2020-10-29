@@ -119,7 +119,7 @@ class VerifyEmailController extends Controller
                                             <div class="form">
                                             	<p><b>Please verify your account</b></p>
                                             	<div style = "margin-top: 2%; background-color: #2ebb69; border-style: none; border-radius: 4px; width: 50%; padding: 2% 8%; color: #fff;">
-                                            	<a href="http://localhost:8000/verify/'.$stremail.'/'.$token.'">Verify here</a>
+                                            	<a href="http://aderankcoding.herokuapp.com/verify/'.$stremail.'/'.$token.'">Verify here</a>
                                             	<div>
                                             </div>
                                         </div> 
